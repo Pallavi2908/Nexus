@@ -7,7 +7,7 @@ The secondary goal of Nexus is to be able to understand what a 'scalable' and 'f
 
 ### 🚧 Project Status: Work in Progress 🚧
 Nexus is currently 50% complete.
-The ingestion layer and a basic BullMQ processing system have been implemented.
+The ingestion layer and a basic BullMQ processing system have been implemented. The core processing system with image compression is available in the repo : https://github.com/Pallavi2908/bullmq-mysql
 This repository is intentionally being developed in the open to reflect how I would structure, plan, and ship a real-world project at a startup.
 I am actively working on the remaining features.
 # High-Level Architecture
