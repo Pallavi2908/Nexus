@@ -1,0 +1,8 @@
+node_modules/
+.env
+test.js
+app(old).js
+bugs.txt
+public/js/upload_widget.js
+Oldimages/
+tests/

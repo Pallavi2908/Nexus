@@ -1,0 +1,31 @@
+{
+  "name": "nexus",
+  "version": "1.0.0",
+  "description": "Distributed Job Processing System built using Node.js, Redis and BullMQ",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:css": "npx @tailwindcss/cli -i ./public/css/input.css -o ./public/css/output.css --watch"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.17",
+    "bullmq": "^5.63.0",
+    "cloudinary": "^2.8.0",
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "ioredis": "^5.8.2",
+    "multer": "^2.0.2",
+    "mysql2": "^3.15.3",
+    "path": "^0.12.7",
+    "redis": "^5.9.0",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4.1.17"
+  }
+}

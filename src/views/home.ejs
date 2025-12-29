@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/output.css" rel="stylesheet" />
+    <title>Nexus - Home Page</title>
+  </head>
+  <body class="bg-yellow-400 p-0 m-0 font-JetBrains">
+    <style>
+      #next-step-section {
+        margin-top: 20px;
+        padding: 15px;
+        background: #111;
+        border: 1px solid #ffcc00;
+        border-radius: 8px;
+        color: white;
+      }
+
+      #process-btn {
+        background: #ffcc00;
+        padding: 10px 16px;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+      }
+    </style>
+    <div class="px-2 py-4 flex flex-col text-center gap-4 mx-auto">
+      <div><h1 class="text-4xl">Welcome to Nexus</h1></div>
+      <div class="mx-auto px-8 w-1/2 flex flex-col gap-4">
+        <p>
+          <b>Nexus</b> is a<b
+            ><u> Node.js-powered distributed job processing system</u></b
+          >
+          optimized for high-volume image and video compression pipelines. It
+          uses <b>Multer</b> for upload ingestion, <b>Cloudinary</b> for raw
+          media storage, <b>BullMQ</b> for queue orchestration, <b>Redis</b>>
+          for fast job dispatching, and <b><u>FFmpeg-based workers</u></b> for
+          compute-intensive processing.
+        </p>
+        <img src="/assets/nexus-blueprint.png" class="rounded-2xl" />
+        <p>
+          A persistent NoSQL layer (<b>MongoDB</b>) stores job metadata,
+          status,7 logs, and idempotency keys, ensuring reliable execution even
+          across worker restarts or failures. Real-time job tracking is
+          delivered through Server-Sent Events, reducing client-side polling
+          overhead and enabling a seamless user experience.
+        </p>
+
+        <p
+          class="border-dashed border-2 rounded-sm p-4 bg-black text-yellow-400"
+        >
+          Nexus is built with scalability in mind—supporting containerized
+          deployments, horizontal worker scaling, and distributed processing
+          across multiple nodes.
+        </p>
+      </div>
+    </div>
+    <div class="px-2 py-4 mx-auto w-1/2">
+      <h1 class="text-4xl text-center"><u>Upload images for compression</u></h1>
+      <form
+        id="form"
+        method="POST"
+        enctype="multipart/form-data"
+        class="border-dashed border-2 rounded-sm p-4 bg-black text-yellow-400 mt-4 flex flex-col"
+      >
+        <div class="flex flex-col">
+          <label for="files" class="border-2 cursor-pointer w-fit mx-auto px-4 py-2 rounded-lg"
+            >Add files</label
+          >
+          <input
+            id="files"
+            name="files"
+            type="file"
+            accept="image/png, image/gif, image/jpeg"
+            multiple
+            style="opacity: 0;"
+            onchange="loadFile(event)"
+            
+          />
+        </div>
+        <div id="preview-img" class="flex flex-wrap gap-4 mt-4 px-4 py-2"></div>
+        <button
+          class="cursor-pointer bg-yellow-400 text-black whitespace-nowrap transition-all duration-300 mx-auto mt-4 rounded-md px-4 py-2 text-lg"
+          type="submit" id="btn-submit"
+        >
+          Upload
+        </button>
+     
+      <div id="next-step-section" class=" border-dashed border-2 text-center" style="display: none">
+        <h3>Uploads completed ✔</h3>
+        <p>Your files are now ready to send to Nexus for processing.</p>
+        <button id="process-btn">Start Processing</button>
+      </div>
+    </div>
+    <div id="toast" class="hidden fixed top-4 right-4 bg-black text-yellow-400 px-4 py-2 rounded-md shadow-lg"></div>
+
+    <script src="/js/script.js"></script>
+
+  
+  </body>
+</html>
